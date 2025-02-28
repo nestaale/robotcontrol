@@ -170,7 +170,7 @@ void setup() {
   ledcWrite(enable2Pin, 0);
 
   // Setup Access Point
-  Serial.print("Setting AP (Access Point)…");
+  Serial.println("Setting AP (Access Point)...");
   WiFi.softAP(ssid, password);
 
   IPAddress IP = WiFi.softAPIP();
