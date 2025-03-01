@@ -1,7 +1,23 @@
+/* 
+--------------------------------
+United Nations Robot Competition
+     Brindisi 29th May 2025
+--------------------------------
+
+    Basic demonstration robot
+
+*/
+
 #include <WiFi.h>
 #include <WebServer.h>
 
+// ------------------------------------------
+//             VERY IMPORTANT!!!
+// ------------------------------------------
 // Replace with your network credentials
+// Do not use this default credential
+// to avoid confusion during the competition!
+// ------------------------------------------
 const char* ssid     = "UN-Robot";
 const char* password = "123456789";
 
@@ -18,7 +34,7 @@ const int motor2Pin2 = 25;
 const int enable2Pin = 32;
 
 // PWM properties
-const int freq = 30000;
+const int freq = 5000;
 const int resolution = 8;
 int dutyCycle = 0;
 
