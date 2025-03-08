@@ -4,4 +4,4 @@ Brindisi 29th May 2025
 
 Demonstration robot
 
-
+![alt text](https://github.com/nestaale/robotcontrol/blob/main/schema.png?raw=true)
