@@ -11,7 +11,13 @@ United Nations Robot Competition
 #include <WiFi.h>
 #include <WebServer.h>
 
+// ------------------------------------------
+//             VERY IMPORTANT!!!
+// ------------------------------------------
 // Replace with your network credentials
+// Do not use this default credential
+// to avoid confusion during the competition!
+// ------------------------------------------
 const char* ssid     = "UN-Robot";
 const char* password = "123456789";
 
