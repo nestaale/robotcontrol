@@ -1,3 +1,13 @@
+/* 
+--------------------------------
+United Nations Robot Competition
+     Brindisi 29th May 2025
+--------------------------------
+
+    Basic demonstration robot
+
+*/
+
 #include <WiFi.h>
 #include <WebServer.h>
 
