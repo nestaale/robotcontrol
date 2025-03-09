@@ -10,4 +10,4 @@ Connections schema:
 
 Webpage:
 
-![alt text](https://github.com/nestaale/robotcontrol/blob/main/webpage1.png?raw=true)
+![alt text](https://github.com/nestaale/robotcontrol/blob/main/webpage.png?raw=true)
