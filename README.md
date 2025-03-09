@@ -11,3 +11,7 @@ Connections schema:
 Webpage:
 
 ![alt text](https://github.com/nestaale/robotcontrol/blob/main/webpage.png?raw=true)
+
+Example:
+
+![alt text](https://github.com/nestaale/robotcontrol/blob/main/photo.jpeg?raw=true)
