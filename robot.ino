@@ -57,8 +57,10 @@ const char html[] PROGMEM = R"rawliteral(
   <script>
     function moveForward() { fetch('/forward'); }
     function moveLeft() { fetch('/left'); }
+    function rotateLeft() { fetch('/rotateleft'); }
     function stopRobot() { fetch('/stop'); }
     function moveRight() { fetch('/right'); }
+    function rotateRight() { fetch('/rotateright'); }
     function moveReverse() { fetch('/reverse'); }
 
     function updateMotorSpeed(pos) {
@@ -69,7 +71,11 @@ const char html[] PROGMEM = R"rawliteral(
 </head>
 <body>
   <h1>UN Robot</h1>
-  <p><button class="button" onclick="moveForward()">Fwd</button></p>
+    <p>
+      <button class="button" onclick="rotateLeft()">RL</button>
+      <button class="button" onclick="moveForward()">Fwd</button>
+      <button class="button" onclick="rotateRight()">RR</button>
+    </p>
   <div style="clear: both;">
     <p>
       <button class="button" onclick="moveLeft()">L</button>
@@ -103,7 +109,14 @@ void handleForward() {
 
 void handleLeft() {
   Serial.println("Left");
-  setMotorPins(LOW, LOW, LOW, HIGH);
+  setMotorPins(LOW, HIGH, LOW, LOW);
+  digitalWrite(onboardLedPin, HIGH); // Turn on LED
+  server.send(200);
+}
+
+void handleRotateLeft() {
+  Serial.println("Left");
+  setMotorPins(LOW, HIGH, HIGH, LOW);
   digitalWrite(onboardLedPin, HIGH); // Turn on LED
   server.send(200);
 }
@@ -117,7 +130,14 @@ void handleStop() {
 
 void handleRight() {
   Serial.println("Right");
-  setMotorPins(LOW, HIGH, LOW, LOW);
+  setMotorPins(LOW, LOW, LOW, HIGH);
+  digitalWrite(onboardLedPin, HIGH); // Turn on LED
+  server.send(200);
+}
+
+void handleRotateRight() {
+  Serial.println("Right");
+  setMotorPins(HIGH, LOW, LOW, HIGH);
   digitalWrite(onboardLedPin, HIGH); // Turn on LED
   server.send(200);
 }
@@ -176,8 +196,10 @@ void setup() {
   server.on("/", handleRoot);
   server.on("/forward", handleForward);
   server.on("/left", handleLeft);
+  server.on("/rotateleft", handleRotateLeft);
   server.on("/stop", handleStop);
   server.on("/right", handleRight);
+  server.on("/rotateright", handleRotateRight);
   server.on("/reverse", handleReverse);
   server.on("/speed", handleSpeed);
 
