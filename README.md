@@ -15,3 +15,7 @@ Webpage:
 Example:
 
 ![alt text](https://github.com/nestaale/robotcontrol/blob/main/photo.jpeg?raw=true)
+
+Photo of the Robot:
+
+![alt text](https://github.com/nestaale/robotcontrol/blob/main/Robot_demo.jpg?raw=true)
